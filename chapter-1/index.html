@@ -9,11 +9,17 @@
 </head>
 
 <body class="">
-    <div id="app">
-        <img :src="image" :alt="name" class="img-fluid">
-        <h2 class="fw-bold"> {{ name }}</h2>
-        <p>{{ desc }}</p>
-        <div class="h3 fw-bold">Rp {{ price }}</div>
+    <div class="container" id="app">
+        <div class="row d-flex my-3 align-items-center" v-for="item in products">
+            <div class="col-sm-4">
+                <img :src="item.image" :alt="item.name" class="img-fluid d-block">
+            </div>
+            <div class="col">
+                <h2 class="text-info fw-bold"> {{ item.name }}</h2>
+                <p class="mb-9">{{ item.description }}</p>
+                <div class="h5 float-right fw-bold">Rp {{ item.price }}</div>
+            </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
