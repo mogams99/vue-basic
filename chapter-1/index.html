@@ -16,7 +16,7 @@
             <input type="number" class="form-control w-25" v-model="maximum" readonly>
         </div>
         <input type="range" class="custom-range w-100" min="0" max="200" v-model="maximum">
-        <div class="row d-flex my-3 align-items-center" v-for="item in products">
+        <div class="row d-flex mb-3 align-items-center" v-for="item in products">
             <div v-if="item.price <= Number(maximum)">
                 <div class="col-sm-4">
                     <img :src="item.image" :alt="item.name" class="img-fluid d-block">
