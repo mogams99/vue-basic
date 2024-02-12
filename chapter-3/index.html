@@ -15,9 +15,14 @@
         <nav class="navbar navbar-light bg-light fixed-top">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="#">Vue Basic</a>
-                <div class="navbar-text ml-auto">
-                    <b>cart:</b>
-                    <span class="badge rounded-pill bg-success">{{ cart.length }}</span>
+                <div class="navbar-text ml-auto d-flex">
+                    <button class="btn btn-sm btn-outline-success" @click="style.sliderStatus = !style.sliderStatus">
+                        <i class="fas fa-dollar-sign"></i>
+                    </button>
+                    <div class="ms-3" v-if="cart.length > 0">
+                        <b>cart:</b>
+                        <span class="badge rounded-pill bg-success">{{ cart.length }}</span>
+                    </div>
                 </div>
             </div>
         </nav>
