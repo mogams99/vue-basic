@@ -21,9 +21,9 @@
                 </div>
             </div>
         </nav>
-        <div class="d-flex align-items-center mt-5">
+        <div class="align-items-center" :class="sliderState">
             <label :class="style.label">Max</label>
-            <input type="text" class="form-control mx-2" :style="{'width': '50px', 'text-align': 'center'}" v-model="maximum">
+            <input type="text" class="form-control mx-2" :style="{'width': style.inputWidth + 'px', 'text-align': 'center'}" v-model="maximum">
             <input type="range" class="custom-range w-100" min="0" max="200" v-model="maximum">
         </div>
         <div class="row d-flex mb-3 align-items-center" v-for="item in products" v-if="item.price <= Number(maximum)">
