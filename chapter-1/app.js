@@ -2,6 +2,7 @@ var app = new Vue({
     el: '#app',
     data: {
         maximum: 50,
+        imgClass: 'img-fluid d-block',
         products: null,
         cart: [],
     },

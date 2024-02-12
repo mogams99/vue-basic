@@ -33,7 +33,11 @@
                 </button>
             </div>
             <div class="col-sm-4">
-                <img :src="item.image" :alt="item.name" class="img-fluid d-block">
+                <img v-bind="{
+                    class: imgClass,
+                    src: item.image,
+                    alt: item.name
+                }">
             </div>
             <div class="col">
                 <h2 class="text-info fw-bold"> {{ item.name }}</h2>
