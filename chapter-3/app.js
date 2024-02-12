@@ -24,8 +24,22 @@ var app = new Vue({
         }
     },
     methods: {
+        before: function(el) {
+            el.className = 'd-none';
+        },
+        enter: function(el) {
+            var delay = el.dataset.index * 100;
+            setTimeout(function() {
+                el.className = 'row d-flex mb-3 align-items-center animate__animated animate__fadeInRight'
+            }, delay);
+        },
+        leave: function(el) {
+            var delay = el.dataset.index * 100;
+            setTimeout(function() {
+                el.className = 'row d-flex mb-3 align-items-center animate__animated animate__fadeOutRight'
+            }, delay);
+        },
         addItem: function(product) {
-            console.warn(product);
             this.cart.push(product)
         }
     },
