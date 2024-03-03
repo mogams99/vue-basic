@@ -21,8 +21,8 @@
                     <button class="btn btn-sm btn-outline-success" @click="style.sliderStatus = !style.sliderStatus">
                         <i class="fas fa-dollar-sign"></i>
                     </button>
-                    <div class="ms-3" v-if="cart.length > 0">
-                        <button class="btn btn-success btn-sm dropdown-toggle" type="button" id="dropDownCart" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="ms-3">
+                        <button class="btn btn-success btn-sm dropdown-toggle" type="button" id="dropDownCart" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                             <b>cart:</b>
                             <span class="badge rounded-pill bg-success">{{ cart.length }}</span>
                         </button>
@@ -32,8 +32,8 @@
                                     <span class="badge rounded-pill bg-warning align-text-top me-1">
                                         {{ item.qty }}
                                     </span>
-                                    {{ item.name }}
-                                    <b>{{ item.price | currencyFormat }}</b>
+                                    {{ item.product.name }}
+                                    <b>{{ item.product.price * item.qty | currencyFormat }}</b>
                                 </div>
                             </div>
                         </div>
