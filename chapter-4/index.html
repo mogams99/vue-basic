@@ -23,8 +23,10 @@
                     </button>
                     <div class="ms-3">
                         <button class="btn btn-success btn-sm dropdown-toggle" type="button" id="dropDownCart" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
-                            <b>cart:</b>
-                            <span class="badge rounded-pill bg-success">{{ cart.length }}</span>
+                            <!-- <b>cart:</b> -->
+                            <span class="badge rounded-pill bg-success">{{ cartQty }}</span>
+                            <i class="fas fa-shopping-cart mx-2"></i>
+                            {{ cartTotal | currencyFormat }}
                         </button>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropDownCart">
                             <div v-for="(item, index) in cart" :key="index">

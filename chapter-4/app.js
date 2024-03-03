@@ -26,7 +26,21 @@ var app = new Vue({
     computed: {
         sliderState: function() {
             return this.style.sliderStatus ? 'd-flex mt-5' : 'd-none';
-        }
+        },
+        cartTotal: function() {
+            let sum = 0;
+            for (key in this.cart)  {
+                sum = sum + (this.cart[key].product.price * this.cart[key].qty);
+            }
+            return sum;
+        },
+        cartQty: function() {
+            let qty = 0;
+            for (key in this.cart)  {
+                qty = qty + this.cart[key].qty;
+            }
+            return qty;
+        },
     },
     methods: {
         before: function(el) {
