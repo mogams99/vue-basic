@@ -21,7 +21,7 @@
                     <button class="btn btn-sm btn-outline-success" @click="style.sliderStatus = !style.sliderStatus">
                         <i class="fas fa-dollar-sign"></i>
                     </button>
-                    <div class="ms-3">
+                    <div class="dropdown ms-3" v-if="cart.length > 0">
                         <button class="btn btn-success btn-sm dropdown-toggle" type="button" id="dropDownCart" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                             <!-- <b>cart:</b> -->
                             <span class="badge rounded-pill bg-success">{{ cartQty }}</span>
@@ -36,6 +36,7 @@
                                     </span>
                                     {{ item.product.name }}
                                     <b>{{ item.product.price * item.qty | currencyFormat }}</b>
+                                    <a href="#" class="badge bg-danger text-white text-decoration-underline" @click.stop="deleteItem(index)">-</a>
                                 </div>
                             </div>
                         </div>
