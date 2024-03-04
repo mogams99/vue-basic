@@ -39,7 +39,7 @@ Vue.component('product-list', {
     <transition-group name="fade" tag="div" @beforeEnter="before" @enter="enter" @leave="leave">
         <div class="row d-none mb-3 align-items-center" v-for="(item, index) in products" :key="item.id" v-if="item.price <= Number(maximum)" :data-index="index">
             <div class="col-1 m-auto">
-                <button class="btn btn-info text-white" v-on:click="addItem(item)">
+                <button class="btn btn-info text-white" @click="$emit('add', item)">
                     <i class="fas fa-plus"></i>
                 </button>
             </div>
