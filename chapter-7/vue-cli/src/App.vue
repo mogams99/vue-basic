@@ -7,16 +7,19 @@
       nostrum ea velit totam pariatur nisi, voluptas ex suscipit perspiciatis!
     </p>
     <font-awesome-icon icon="shopping-cart"></font-awesome-icon>
+    <price :value="4.23"></price>
   </div>
 </template>
 
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import Price from "./components/Price.vue";
 
 export default {
   name: "App",
   components: {
     FontAwesomeIcon,
+    Price,
   },
 };
 </script>
