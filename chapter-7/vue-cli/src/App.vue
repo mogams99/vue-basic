@@ -1,6 +1,10 @@
 <template>
   <div id="app" class="container mt-5">
     <h1>VueShop</h1>
+    <price-slider
+      :sliderStatus="sliderStatus"
+      :maximum.sync="maximum"
+    ></price-slider>
     <product-list
       :maximum="maximum"
       :products="products"
@@ -10,18 +14,21 @@
 </template>
 
 <script>
+import PriceSlider from "./components/PriceSlider.vue";
 import ProductList from "./components/ProductList.vue";
 
 export default {
   name: "App",
   data: function () {
     return {
-      maximum: 20,
+      maximum: 50,
       products: [],
       cart: [],
+      sliderStatus: true,
     };
   },
   components: {
+    PriceSlider,
     ProductList,
   },
   mounted: function () {
