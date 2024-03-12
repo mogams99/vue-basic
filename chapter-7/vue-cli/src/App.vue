@@ -1,7 +1,11 @@
 <template>
   <div id="app" class="container mt-5">
     <h1>VueShop</h1>
-    <product-list :maximum="maximum" :products="products"></product-list>
+    <product-list
+      :maximum="maximum"
+      :products="products"
+      @add="addItem"
+    ></product-list>
   </div>
 </template>
 
@@ -14,6 +18,7 @@ export default {
     return {
       maximum: 20,
       products: [],
+      cart: [],
     };
   },
   components: {
@@ -25,6 +30,28 @@ export default {
       .then((data) => {
         this.products = data;
       });
+  },
+  methods: {
+    addItem: function (product) {
+      let productIndex;
+      let productExist = this.cart.filter(function (item, index) {
+        if (item.product.id == Number(product.id)) {
+          productIndex = index;
+          return true;
+        } else {
+          return false;
+        }
+      });
+
+      if (productExist.length) {
+        this.cart[productIndex].qty++;
+      } else {
+        this.cart.push({
+          product: product,
+          qty: 1,
+        });
+      }
+    },
   },
 };
 </script>
