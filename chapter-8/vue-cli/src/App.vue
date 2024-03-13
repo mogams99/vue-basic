@@ -1,5 +1,11 @@
 <template>
   <div id="app" class="container">
+    <checkout
+      :cart="cart"
+      :cartTotal="cartTotal"
+      @add="addItem"
+      @delete="deleteItem"
+    ></checkout>
     <products
       :cart="cart"
       :cartQty="cartQty"
@@ -15,6 +21,7 @@
 </template>
 
 <script>
+import Checkout from "./components/Checkout.vue";
 import Products from "./components/Products.vue";
 
 export default {
@@ -28,6 +35,7 @@ export default {
     };
   },
   components: {
+    Checkout,
     Products,
   },
   mounted: function () {
@@ -78,6 +86,7 @@ export default {
       }
     },
     deleteItem: function (id) {
+      console.warn(id);
       if (this.cart[id].qty > 1) {
         this.cart[id].qty--;
       } else {

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>IDShop</h1>
     <navbar
       :cart="cart"
       :cartQty="cartQty"
