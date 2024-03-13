@@ -5,6 +5,7 @@
       :cartQty="cartQty"
       :cartTotal="cartTotal"
       @toggle="toggleSliderStatus"
+      @delete="deleteItem"
     ></navbar>
     <price-slider
       :sliderStatus="sliderStatus"
@@ -83,6 +84,13 @@ export default {
           product: product,
           qty: 1,
         });
+      }
+    },
+    deleteItem: function (id) {
+      if (this.cart[id].qty > 1) {
+        this.cart[id].qty--;
+      } else {
+        this.cart.splice(id, 1);
       }
     },
   },
