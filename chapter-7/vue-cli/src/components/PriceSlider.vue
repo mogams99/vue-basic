@@ -12,15 +12,15 @@
           class="form-control mx-2"
           style="width: 60px; text-align: center"
           v-model="maxAmount"
-          @change="$emit('update:maximum', maxAmount)"
+          @change="updateMaxAmount"
         />
         <input
           type="range"
           class="custom-range w-100"
           min="0"
           max="200"
-          v-model="maxAmount"
-          @input="$emit('update:maximum', maxAmount)"
+          :value="parseInt(maxAmount)"
+          @input="updateMaxAmount"
         />
       </div>
     </div>
@@ -39,6 +39,13 @@ export default {
   computed: {
     sliderState: function () {
       return this.sliderStatus ? "d-flex" : "d-none";
+    },
+  },
+  methods: {
+    updateMaxAmount(event) {
+      const value = parseInt(event.target.value); // Mengkonversi nilai ke tipe number
+      this.maxAmount = value;
+      this.$emit("update:maximum", value);
     },
   },
 };
