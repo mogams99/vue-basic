@@ -13,7 +13,10 @@
       :data-index="index"
     >
       <div class="col-1 m-auto">
-        <button class="btn btn-info text-white" @click="$emit('add', item)">
+        <button
+          class="btn btn-info text-white"
+          @click="$emit('add-item', item)"
+        >
           <font-awesome-icon icon="plus"></font-awesome-icon>
         </button>
       </div>

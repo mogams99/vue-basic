@@ -3,7 +3,10 @@
     <div class="container">
       <a class="navbar-brand fw-bold" href="#">Vue Basic</a>
       <div class="navbar-text ml-auto d-flex">
-        <button class="btn btn-sm btn-outline-success" @click="$emit('toggle')">
+        <button
+          class="btn btn-sm btn-outline-success"
+          @click="$emit('toggle-slide')"
+        >
           <font-awesome-icon icon="dollar-sign"></font-awesome-icon>
         </button>
         <div class="dropdown ms-3" v-if="cart.length > 0">
@@ -34,7 +37,7 @@
                 <a
                   href="#"
                   class="badge bg-danger text-white text-decoration-underline"
-                  @click.stop="$emit('delete', index)"
+                  @click.stop="$emit('delete-item', index)"
                   >-</a
                 >
               </div>
