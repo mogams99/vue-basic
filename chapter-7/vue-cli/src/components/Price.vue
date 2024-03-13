@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "FormattedPrice",
+  name: "formatted-price",
   props: {
     value: Number,
     prefix: {

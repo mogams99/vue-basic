@@ -5,7 +5,7 @@
     leave-active-class="animate__animated animate__slideOutRight"
   >
     <div v-if="sliderStatus">
-      <div class="align-items-center" :class="sliderState">
+      <div class="align-items-center pt-4" :class="sliderState">
         <label class="fw-bold mr-2">Max</label>
         <input
           type="text"
