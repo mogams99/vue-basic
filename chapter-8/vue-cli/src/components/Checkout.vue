@@ -45,6 +45,9 @@
         </tr>
       </tbody>
     </table>
+    <router-link class="btn btn-sm btn-info text-white fw-bold" to="/"
+      >Back to Shop</router-link
+    >
   </div>
 </template>
 

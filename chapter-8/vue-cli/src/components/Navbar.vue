@@ -42,6 +42,11 @@
                 >
               </div>
             </div>
+            <router-link
+              class="btn btn-sm btn-info text-white fw-bold float-end"
+              to="/checkout"
+              >Checkout</router-link
+            >
           </div>
         </div>
       </div>
