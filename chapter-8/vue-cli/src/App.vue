@@ -1,12 +1,6 @@
 <template>
   <div id="app" class="container">
-    <checkout
-      :cart="cart"
-      :cartTotal="cartTotal"
-      @add="addItem"
-      @delete="deleteItem"
-    ></checkout>
-    <products
+    <router-view
       :cart="cart"
       :cartQty="cartQty"
       :cartTotal="cartTotal"
@@ -16,14 +10,11 @@
       @toggle="toggleSliderStatus"
       @delete="deleteItem"
       @add="addItem"
-    ></products>
+    ></router-view>
   </div>
 </template>
 
 <script>
-import Checkout from "./components/Checkout.vue";
-import Products from "./components/Products.vue";
-
 export default {
   name: "App",
   data: function () {
@@ -33,10 +24,6 @@ export default {
       cart: [],
       sliderStatus: false,
     };
-  },
-  components: {
-    Checkout,
-    Products,
   },
   mounted: function () {
     fetch("https://hplussport.com/api/products/order/price")
